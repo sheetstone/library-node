@@ -4,7 +4,10 @@
   "description": "library mock project for learning node",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "DEBUG=app node app.js",
+    "start": "DEBUG=app nodemon app.js",
+    "lint": "eslint app.js buildScripts",
+    "generate-mock-data": "node buildScripts/generateMockData.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,34 @@
   "bugs": {
     "url": "https://github.com/sheetstone/library-node/issues"
   },
-  "homepage": "https://github.com/sheetstone/library-node#readme"
+  "homepage": "https://github.com/sheetstone/library-node#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "chalk": "^2.4.1",
+    "debug": "^3.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "json-schema-faker": "^0.5.0-rc15",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*",
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
 }
