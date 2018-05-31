@@ -18,7 +18,7 @@ module.exports.schema = {
           },
           author: {
             type: 'string',
-            faker: 'name.findName',
+            faker: 'name.findName()',
           },
           read: {
             type: 'boolean',
